@@ -150,4 +150,10 @@ class FlappyBird(object):
         image = array3d(display.get_surface())
         display.update()
         self.fps_clock.tick(self.fps)
+
+        # Die Reward Funktion verbessern 
+        # Wenn der Vogel sich mittig aufhält ist es besser als am Rand 
+        if((self.bird_y <= 300) and (self.bird_y >= 100)):
+            reward = reward + 0.2
+
         return image, reward, terminal, positions
