@@ -15,6 +15,9 @@ reinforcement_loesung.py ist ebenfalls ausführbar und zeigt den Vogel beim lern
 Der Lernfortschritt wir im Ordner trained_files gespeichert. Hier ist eine Datei nach 10000 Trainings und eine mit wenigen Trainings vorhanden. 
 Welche für das Programm verwendet werden soll kann durch die Änderung des Paths in reinforcement_loesung.py angegeben werden.      
 
+### Edit
+
+Durch das Anpassen der Reward Funktion konnte eine Verbesserung im Trainingsprozess erzielt werden. Hierbei wurden 0.2 Punkte für jeden Zug mehr vergeben, wenn sich der Vogel im mittleren Teil und nicht an den Rändern befand. Hierdurch wurde das Ursprüngliche Problem beseitigt. Jedoch ist auffällig, dass der Vogel trotz des besseren Trainingsprozesses weiterhin viele ZUstände lernen muss, und zwar mittiger fliegt, jedoch immernoch sehr selten durch die Rohre durchkommt. 
 
 ### User-Story
 Eine direkte User-Story kann für dieses Projekt nicht verfasst werden, da es keine Anwendung im realen Umfeld für einen Nutzer gibt und es somit keinen Mehrwert bietet. Jedoch konnte in der Präsentation gezeigt werden, dass durch die Anwendung von Machine Learning Methoden bei verschiedenen Spielen wie Schach oder Go wichtige Erkenntnisse über die Technologie gewonnen werden konnten. Das führte beispielsweise dazu, dass in der Biologie nun anhand von künstlicher Inteligenz Proteinfaltungen ermittelt werden. Daher handelt es sich hierbei eher um ein Forschungsprojekt, um die neue Technologie zu verstehen und im weiteren Verlauf auf wichtige Anwendungen anzuwenden, die einen Mehrwert für die Menschheit bieten.
