@@ -15,14 +15,14 @@ class FlappyBird(object):
     screen_height = 512
     screen = display.set_mode((screen_width, screen_height))
     display.set_caption('Flappy Bird')
-    base_image = load('base.png').convert_alpha()
-    background_image = load('background-black.png').convert()
+    base_image = load('images\base.png').convert_alpha()
+    background_image = load('images\background-black.png').convert()
 
-    pipe_images = [rotate(load('pipe-green.png').convert_alpha(), 180),
-                   load('pipe-green.png').convert_alpha()]
-    bird_images = [load('redbird-upflap.png').convert_alpha(),
-                   load('redbird-midflap.png').convert_alpha(),
-                   load('redbird-downflap.png').convert_alpha()]
+    pipe_images = [rotate(load('images\pipe-green.png').convert_alpha(), 180),
+                   load('images\pipe-green.png').convert_alpha()]
+    bird_images = [load('images\redbird-upflap.png').convert_alpha(),
+                   load('images\redbird-midflap.png').convert_alpha(),
+                   load('images\redbird-downflap.png').convert_alpha()]
     
 
     bird_hitmask = [pixels_alpha(image).astype(bool) for image in bird_images]
