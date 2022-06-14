@@ -15,9 +15,9 @@ df_states = help_functions.get_df_states()
 #Wenn schon trainiert wurde, soll das entsprechende File geladen werden
 #Falls nicht ein neues erstellt werden
 
-file_exists = os.path.exists('np_q_table.txt')
+file_exists = os.path.exists('trained_files/np_q_table.txt')
 if file_exists: 
-    np_q_table = np.loadtxt('np_q_table.txt')
+    np_q_table = np.loadtxt('trained_files/np_q_table.txt')
     print("load table")
 else:
     np_q_table = help_functions.get_np_q_table(df_states) 
@@ -60,12 +60,12 @@ for i in range(1, 10000):
         epochs += 1
         if keyboard.is_pressed('Esc'):
             print("\nyou pressed Esc, so exiting...")
-            np.savetxt('np_q_table.txt', np_q_table)
+            np.savetxt('trained_files/np_q_table.txt', np_q_table)
             sys.exit(0)
     
     if keyboard.is_pressed('Esc'):
-        np.savetxt('np_q_table.txt', np_q_table)
+        np.savetxt('trained_files/np_q_table.txt', np_q_table)
         sys.exit(0)
 
-np.savetxt('np_q_table.txt', np_q_table)
+np.savetxt('trained_files/np_q_table.txt', np_q_table)
 
