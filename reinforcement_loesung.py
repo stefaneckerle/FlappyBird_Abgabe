@@ -12,6 +12,9 @@ import os.path
 
 df_states = help_functions.get_df_states()
 
+#Wenn schon trainiert wurde, soll das entsprechende File geladen werden
+#Falls nicht ein neues erstellt werden
+
 file_exists = os.path.exists('np_q_table.txt')
 if file_exists: 
     np_q_table = np.loadtxt('np_q_table.txt')
@@ -19,11 +22,12 @@ if file_exists:
 else:
     np_q_table = help_functions.get_np_q_table(df_states) 
 
-# Hyperparameters
+# Hyperparameters festlegen 
 alpha = 0.1
 gamma = 0.8
-epsilon = 0.3
+epsilon = 0.1
 
+#Das Learning eine bestimmte Anzahl oft durchführen (hier 10000)
 for i in range(1, 10000):
     epochs, reward = 0, 0
     done = False
@@ -32,6 +36,7 @@ for i in range(1, 10000):
     state = help_functions.encode(pos[2], max(0, pos[0]), pos[1], df_states)
     while not done:
         
+        #Beliebige Aktionen einstreuen 
         if random.uniform(0, 1) < epsilon:
             action = random.randint(0,1)
         else:   
